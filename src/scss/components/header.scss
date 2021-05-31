@@ -1,0 +1,152 @@
+$greyColor : #898989;
+$greenColor : #59B586;
+#header {
+    .header__top {
+        background: #313131;
+        .header__top-left {
+            align-items: center;
+            .header__top__text {
+                font-size: pxToRem(12px);
+                margin-right: pxToRem(20px);
+                color:$greyColor;
+            }
+            .nav.header__top__icon {
+                list-style: none;
+                li {
+                    i {
+                        font-size: pxToRem(12px);
+                        padding:pxToRem(10px);
+                        color : $greyColor;
+                    }
+                }
+            } 
+
+        }
+        .header__top-right {
+            font-size: pxToRem(12px);
+            align-items: center;
+            ul {
+                li {
+                    margin-right: pxToRem(30px);
+                    span {
+                        color : $greyColor;
+                        margin-right: pxToRem(5px);
+                    }
+                    a {
+                        text-decoration: none;
+                        color : $greyColor;
+                    }
+                }
+            }
+        } 
+    }
+    .header__body {
+        background-image: url(../assets/background/bg-1.png);
+        background-repeat: repeat;
+        .header__body-wrap {
+            .logo-wrap {
+                .logo__text {
+                    font-size: pxToRem(18px);
+                    color : $greyColor;
+                    line-height: pxToRem(25px);
+                    letter-spacing: pxToRem(1px);
+                }
+            }
+            .logo-right-img {
+                .img1 {
+                    max-width: pxToRem(85px);
+                    position: relative;
+                    top: pxToRem(60px);
+                }
+                .img2 {
+                    max-width: pxToRem(90px);
+                    position: relative;
+                    top: pxToRem(50px);
+                }
+            }
+        }
+        .header__body__search {
+            margin-right: pxToRem(20px);
+            .header__phone {
+                margin-bottom: pxToRem(5px);
+                i {
+                    opacity: .6;
+                }
+                span {
+                    font-size: pxToRem(14px);
+                    color : #7D7D7D;
+                }
+            }
+            .header__search-form {
+                margin-top: pxToRem(5px);
+                form {
+                    background-color: #fff;
+                    width: pxToRem(400px);
+                    max-width: pxToRem(400px);
+                    border-radius: pxToRem(20px);
+                    padding : pxToRem(5px) pxToRem(20px);
+                    display: flex;
+                    input {
+                        border: none;
+                        outline: none;
+                    }
+                    span {
+                        margin-left: auto;
+                        opacity: .6;
+                        padding-left: pxToRem(15px);
+                        border-left: 1px solid;
+                    }
+                }
+            }
+        }
+        .header__body__cart {
+            .header__body__cart-wrap {
+                margin-top: pxToRem(70px);
+                .header__body__cart-icon {
+                    margin-right: pxToRem(10px);
+                    opacity: .9;
+                }
+                .header__body__cart-text {
+                    font-size: pxToRem(15px);
+                }
+            }
+        }
+    }
+    .header__bottom {
+        background-color: $greenColor;
+        .menu-icon {
+            width: pxToRem(35px);
+            background-color:transparent;
+            display: flex;
+            align-items: center;
+            .nav-icon {
+                background-color: #fff;
+                display: block;
+                width: pxToRem(20px);
+                height: pxToRem(2px);
+                position: relative;
+                &::before,&::after {
+                    content : '';
+                    position: absolute;
+                    background-color: #fff;
+                    width: pxToRem(20px);
+                    height: pxToRem(2px);
+                }
+                &::before {
+                    top: pxToRem(5px);
+                }
+                &::after {
+                    top: pxToRem(-5px);
+                }
+            }
+        }
+        .nav {
+            .nav-item {
+                .nav-link {
+                    color : #fff;
+                    font-size: pxToRem(14px);
+                }
+            }
+        }
+    }
+}

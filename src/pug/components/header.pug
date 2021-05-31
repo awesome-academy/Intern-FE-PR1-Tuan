@@ -1,0 +1,87 @@
+mixin renderListIcon(data)
+    li 
+        i(class=`${data}`)
+
+
+header#header        
+    .header__top
+        .container
+            .header__top-wrap
+                .row
+                    .col-12.d-flex.justify-content-between 
+                        .header__top-left.d-flex 
+                            span.header__top__text Open time: 8:00 - 18:00  Monday-Sunday
+                            ul.nav.header__top__icon 
+                                - const iconlist = ["fab fa-facebook-f","fab fa-twitter","fab fa-telegram-plane","fab fa-linkedin-in"]
+                                each n in iconlist 
+                                    +renderListIcon(n)
+                        .header__top-right.d-flex
+                            ul.nav 
+                                li  
+                                    span 
+                                        i.fas.fa-user
+                                    a(href="#") Đăng kí
+                                li 
+                                    span
+                                        i.fas.fa-user-plus
+                                    a(href="#") Đăng nhập
+    .header__body
+        .container 
+            .header__body-wrap 
+                .row
+                    .col-md-5.d-flex
+                        .logo-wrap 
+                            a(href="index.html") 
+                                img(src="./assets/images/GreenShop.png", alt="logo image") 
+                                p.logo__text Món quà từ thiên nhiên
+                        .logo-rightd.d-flex
+                            .logo-right-img 
+                                img(src="./assets/images/img-header1.png", alt="image" class="img-fluid")
+                    .col-md-7.d-flex.justify-content-end
+                        .header__body__search.d-flex.flex-column.justify-content-center 
+                            .header__phone 
+                                i(class="fas fa-phone-alt")
+                                span Hỗ trợ : (04) 6675 2323 - (04) 3453 5335
+                            .header__search-form
+                                form(action="#")
+                                    input(type="text" placeholder="Tìm kiếm...")
+                                    span 
+                                        i.fas.fa-search 
+                        .header__body__cart
+                            .header__body__cart-wrap
+                                span.header__body__cart-icon 
+                                    i.fas.fa-shopping-cart
+                                span.header__body__cart-text 0 Sản phẩm 
+
+    .header__bottom
+        .container 
+            .header__bottom-wrap.d-flex 
+                lable.menu-icon
+                    span.nav-icon
+                ul.nav
+                    li.nav-item 
+                        a.nav-link(href="#") TRANG CHỦ
+                    li.nav-item 
+                        a.nav-link(href="#") GIỚI THIỆU
+                    li.nav-item.dropdown 
+                        a.nav-link.dropdown-toggle(href="#") SẢN PHẨM
+                    li.nav-item.dropdown 
+                        a.nav-link.dropdown-toggle(href="#") SẢN PHẨM MỚI
+                    li.nav-item 
+                        a.nav-link(href="#") TIN TỨC
+                    li.nav-item 
+                        a.nav-link(href="#") LIÊN HỆ
+                          
+                    //- li.nav-item 
+                    //-     a.nav-link(href="#") TRANG CHỦ
+                    //- li.nav-item 
+                    //-     a.nav-link(href="#") GIỚI THIỆU     
+                    //- li.nav-item 
+                    //-     a.nav-link(href="#") SẢN PHẨM
+                    //- li.nav-item 
+                    //-     a.nav-link(href="#") SẢN PHẨM MỚI 
+                    //- li.nav-item 
+                    //-     a.nav-link(href="#") TIN TỨC 
+                    //- li.nav-item 
+                    //-     a.nav-link(href="#") LIÊN HỆ
+                     

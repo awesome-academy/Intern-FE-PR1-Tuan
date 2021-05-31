@@ -1,0 +1,124 @@
+$greyColor : #898989;
+$greenColor : #3FB871;
+$background-color : #313131;
+@mixin flex($direction,$space) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $space;
+    padding-top: pxToRem(20px);
+    padding-bottom: pxToRem(20px);
+};
+
+.footer {
+    background-color: $background-color;
+    .footer__top {
+        border-bottom: 1px solid $greyColor;
+        .footer__top-left {
+            @include flex(column,center);
+            .footer__top__title {
+                font-size: pxToRem(14px);
+                font-weight: 700;
+                color : $greyColor;
+            }
+            .footer__top__icon-wrap {
+                li {
+                    i {
+                        font-size: pxToRem(14px);
+                        padding:pxToRem(10px);
+                        color : $greyColor;
+                    }
+                    .fa-facebook-f {
+                        padding-left: 0px;
+                    }
+                }
+            }
+        }
+        .footer__top-right {
+            @include flex(row,space-between);
+            .footer__top__text {
+                font-size: pxToRem(14px);
+                font-weight: 700;
+                color : $greyColor;
+            }
+            .footer__top__form {
+                display: flex;
+                align-items: center;
+                background-color: #fff;
+                width: pxToRem(400px);
+                height: pxToRem(46px);
+                form {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    input {
+                        border: none;
+                        outline: none;
+                        flex-grow: 1;
+                    }
+                    span {
+                        width: pxToRem(46px);
+                        height: pxToRem(46px);
+                        background-color: $greenColor;
+                        color : #fff;
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+        }
+    }
+    .footer__main {
+        color : $greyColor;
+        border-bottom: 1px solid $greyColor;
+        .footer__main__left {
+            .footer__main__left__text {
+                font-size: pxToRem(12px);
+            }
+            .footer__main__left-icon {
+                color: $greenColor;
+            }
+        }
+        .footer__main__right {
+            .footer__main__right-item {
+                .footer__main__right-title {
+                    font-size: pxToRem(14px);
+                    color : $greenColor;
+                }
+                .footer__main__right-list {
+                    .footer__main__right-list-item {
+                        a {
+                            font-size: pxToRem(12px);
+                            color: $greyColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer__bottom {
+        border-bottom: 1px solid $greyColor;
+        .footer__bottom-wrap {
+            padding: 15px 0px;
+            .nav {
+                li {
+                    margin-right: pxToRem(15px);
+                    a {
+                        color : $greyColor;
+                        font-size: pxToRem(12px);
+                    }
+                    .nav-item-icon {
+                        font-size: pxToRem(14px);
+                    }
+                }
+            }
+        }
+    }
+    .footer__end {
+        background-color: #434343;
+        .text-center {
+            color : #fff;
+            font-size: pxToRem(14px);
+            opacity: .9;
+        }
+    }
+}

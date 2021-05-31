@@ -1,0 +1,95 @@
+mixin renderListIcon(data)
+    li.nav-item 
+        i(class=`${data}`)
+-
+    const contentFooter = [
+            {
+                title :"Thông tin khách hàng",
+                list:["Tài khoản của tôi", "Sản phẩm yêu thích", "Lịch sử mua hàng", "Chính sách đổi trả", "Góp ý, khiếu nại"]
+            },
+            {
+                title :"Hỗ trợ dịch vụ",
+                list:["Hệ thống cửa hàng", "Hướng dẫn mua hàng", "Hướng dẫn thanh toán", "Tích điểm đổi quà", "Câu hỏi thường gặp"]
+            },
+            {
+                title :"Chính sách ưu đãi",
+                list:["Chính sách giao hàng","Chính sách đổi trả sản phẩm", "Chính sách bảo hành", "Giới thiệu sản phẩm mới", "Chính sách trả góp"]
+            },
+            {
+                title :"Tin tức",
+                list:["Tin mới", "Khuyến mại", "Tuyển dụng", "Download", "Tags"]
+            }
+        ]
+
+-   
+    const footerBottom = {
+            title: ["Sitemap", "Danh mục sản phẩm", "Hợp tác", "Thông tin liên hệ", "Câu hỏi thường gặp"],
+            icon: ["fab fa-cc-visa", "fab fa-cc-mastercard", "fab fa-cc-paypal","fab fa-cc-visa" ]
+        }
+
+footer.footer 
+    .footer__top
+        .container 
+            .row 
+                .col-md-4
+                    .footer__top-left
+                        .footer__top__title KÊNH THÔNG TIN TỪ CHÚNG TÔI: 
+                        .footer__top__icon-wrap.nav 
+                            - const iconlist1 = ["fab fa-facebook-f","fab fa-twitter","fab fa-youtube","fab fa-linkedin-in"]
+                                each n in iconlist1 
+                                    +renderListIcon(n)
+                .col-md-8
+                    .footer__top-right 
+                        .footer__top__text ĐĂNG KÝ NHẬN 
+                            div EMAIL TỪ CHÚNG TÔI
+                        .footer__top__form 
+                            form(action="#")
+                                    input(type="text")
+                                    span.d-flex.justify-content-center.align-items-center 
+                                        i.fab.fa-telegram-plane
+    .footer__main
+        .container 
+            .row.py-5 
+                .col-md-4.pr-5 
+                    .footer__main__left 
+                        img(src="./assets/images/greenshop1.png", alt="")
+                        p.footer__main__left__text. 
+                            Green shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng
+                            trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triên
+                        div.footer__main__left-phone.d-flex.align-items-center.mb-3
+                            span.footer__main__left-icon.mr-3 
+                                <i class="far fa-envelope"></i>
+                            p.footer__main__left__text.my-0 Điện thoại:(84-4) 66.558.868
+                        div.footer__main__left-email.d-flex.align-items-center
+                            span.footer__main__left-icon.mr-3
+                                <i class="fas fa-mobile-alt"></i>
+                            p.footer__main__left__text.my-0 Email: info@dkt.com.vn
+                .col-md-8.pt-4
+                    .footer__main__right
+                        .d-flex.justify-content-between 
+                            each item in  contentFooter
+                                .footer__main__right-item
+                                    h4.footer__main__right-title.mb-4= item.title
+                                    ul.footer__main__right-list.nav.flex-column
+                                        each n in item.list
+                                            li.footer__main__right-list-item.mb-2 
+                                                a(href="#") 
+                                                    span 
+                                                        i.fas.fa-chevron-right
+                                                    span= n
+    .footer__bottom
+        .container
+            .footer__bottom-wrap 
+                .d-flex.justify-content-between
+                    ul.nav 
+                        each item in footerBottom.title 
+                            li.nav-item
+                                a(href="#")=item
+                    ul.nav 
+                        each item in footerBottom.icon 
+                            li.nav-item
+                                a(href="#" class="nav-item-icon")
+                                    i(class=item)
+    .footer__end 
+        .container.text-center.py-2 Thiết kế bởi Bizweb &copy;
+            
