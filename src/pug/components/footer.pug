@@ -1,31 +1,6 @@
 mixin renderListIcon(data)
-    li.nav-item 
+    li.nav-item
         i(class=`${data}`)
--
-    const contentFooter = [
-            {
-                title :"Thông tin khách hàng",
-                list:["Tài khoản của tôi", "Sản phẩm yêu thích", "Lịch sử mua hàng", "Chính sách đổi trả", "Góp ý, khiếu nại"]
-            },
-            {
-                title :"Hỗ trợ dịch vụ",
-                list:["Hệ thống cửa hàng", "Hướng dẫn mua hàng", "Hướng dẫn thanh toán", "Tích điểm đổi quà", "Câu hỏi thường gặp"]
-            },
-            {
-                title :"Chính sách ưu đãi",
-                list:["Chính sách giao hàng","Chính sách đổi trả sản phẩm", "Chính sách bảo hành", "Giới thiệu sản phẩm mới", "Chính sách trả góp"]
-            },
-            {
-                title :"Tin tức",
-                list:["Tin mới", "Khuyến mại", "Tuyển dụng", "Download", "Tags"]
-            }
-        ]
-
--   
-    const footerBottom = {
-            title: ["Sitemap", "Danh mục sản phẩm", "Hợp tác", "Thông tin liên hệ", "Câu hỏi thường gặp"],
-            icon: ["fab fa-cc-visa", "fab fa-cc-mastercard", "fab fa-cc-paypal","fab fa-cc-visa" ]
-        }
 
 footer.footer 
     .footer__top
@@ -53,9 +28,7 @@ footer.footer
                 .col-md-4.pr-5 
                     .footer__main__left 
                         img(src="./assets/images/greenshop1.png", alt="")
-                        p.footer__main__left__text. 
-                            Green shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng
-                            trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triên
+                        p.footer__main__left__text Green shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triên
                         div.footer__main__left-phone.d-flex.align-items-center.mb-3
                             span.footer__main__left-icon.mr-3 
                                 <i class="far fa-envelope"></i>
@@ -74,7 +47,7 @@ footer.footer
                                         each n in item.list
                                             li.footer__main__right-list-item.mb-2 
                                                 a(href="#") 
-                                                    span 
+                                                    span
                                                         i.fas.fa-chevron-right
                                                     span= n
     .footer__bottom
@@ -91,5 +64,5 @@ footer.footer
                                 a(href="#" class="nav-item-icon")
                                     i(class=item)
     .footer__end 
-        .container.text-center.py-2 Thiết kế bởi Bizweb &copy;
+        .container.text-center.py-2 Thiết kế bởi Bizwebb &copy;
             

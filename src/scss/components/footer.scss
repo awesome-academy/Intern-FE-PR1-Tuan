@@ -1,6 +1,4 @@
-$greyColor : #898989;
-$greenColor : #3FB871;
-$background-color : #313131;
+
 @mixin flex($direction,$space) {
     display: flex;
     flex-direction: $direction;
