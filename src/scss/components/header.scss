@@ -1,0 +1,156 @@
+#header {
+
+    .header__top {
+        background: $background-color;
+        .header__top-left {
+            align-items: center;
+            .header__top__text {
+                color:$greyColor;
+                font-size: pxToRem(12px);
+                margin-right: pxToRem(20px);   
+            }
+            .nav.header__top__icon {
+                list-style: none;
+                li {
+                    i {
+                        font-size: pxToRem(12px);
+                        padding:pxToRem(10px);
+                        color : $greyColor;
+                    }
+                }
+            } 
+        }
+
+        .header__top-right {
+            align-items: center;
+            font-size: pxToRem(12px);
+            ul {
+                li {
+                    margin-right: pxToRem(30px);
+                    span {
+                        color : $greyColor;
+                        margin-right: pxToRem(5px);
+                    }
+                    a {
+                        color : $greyColor;
+                        text-decoration: none;
+                    }
+                }
+            }
+        } 
+    }
+
+    .header__body {
+        background-image: url(../assets/background/bg-1.png);
+        background-repeat: repeat;
+        .header__body-wrap {
+            .logo-wrap {
+                .logo__text {
+                    color : $greyColor;
+                    font-size: pxToRem(18px);
+                    line-height: pxToRem(25px);
+                    letter-spacing: pxToRem(1px);
+                }
+            }
+            .logo-right-img {
+                .img1 {
+                    max-width: pxToRem(85px);
+                    position: relative;
+                    top: pxToRem(60px);
+                }
+                .img2 {
+                    max-width: pxToRem(90px);
+                    position: relative;
+                    top: pxToRem(50px);
+                }
+            }
+        }
+
+        .header__body__search {
+            margin-right: pxToRem(20px);
+            .header__phone {
+                margin-bottom: pxToRem(5px);
+                i {
+                    opacity: .6;
+                }
+                span {
+                    color : $span-color-header;
+                    font-size: pxToRem(14px);
+                }
+            }
+
+            .header__search-form {
+                margin-top: pxToRem(5px);
+                form {
+                    background-color: $white-color;
+                    border-radius: pxToRem(20px);
+                    display: flex;
+                    max-width: pxToRem(400px);
+                    padding : pxToRem(5px) pxToRem(20px);
+                    width: pxToRem(400px);
+                    input {
+                        border: none;
+                        outline: none;
+                    }
+                    span {
+                        border-left: 1px solid;
+                        margin-left: auto;
+                        opacity: .6;
+                        padding-left: pxToRem(15px);
+                    }
+                }
+            }
+        }
+
+        .header__body__cart {
+            .header__body__cart-wrap {
+                margin-top: pxToRem(70px);
+                .header__body__cart-icon {
+                    margin-right: pxToRem(10px);
+                    opacity: .9;
+                }
+                .header__body__cart-text {
+                    font-size: pxToRem(15px);
+                }
+            }
+        }
+    }
+
+    .header__bottom {
+        background-color: $greenColor;
+        .menu-icon {
+            align-items: center;
+            background-color:transparent;
+            display: flex;
+            width: pxToRem(35px);
+            .nav-icon {
+                background-color: $white-color;
+                display: block;
+                height: pxToRem(2px);
+                position: relative;
+                width: pxToRem(20px);
+                &::before,&::after {
+                    content : '';
+                    position: absolute;
+                    background-color: $white-color;
+                    width: pxToRem(20px);
+                    height: pxToRem(2px);
+                }
+                &::before {
+                    top: pxToRem(5px);
+                }
+                &::after {
+                    top: pxToRem(-5px);
+                }
+            }
+        }
+        .nav {
+            .nav-item {
+                .nav-link {
+                    color : $white-color;
+                    font-size: pxToRem(14px);
+                }
+            }
+        }
+    }
+}

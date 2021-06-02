@@ -1,0 +1,124 @@
+@mixin flex($direction,$space) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $space;
+    padding-bottom: pxToRem(20px);
+    padding-top: pxToRem(20px);
+};
+
+.footer {
+    background-color: $background-color;
+    .footer__top {
+        border-bottom: 1px solid $greyColor;
+        .footer__top-left {
+            @include flex(column,center);
+            .footer__top__title {
+                color : $greyColor;
+                font-size: pxToRem(14px);
+                font-weight: 700;
+            }
+            .footer__top__icon-wrap {
+                li {
+                    i {
+                        color : $greyColor;
+                        font-size: pxToRem(14px);
+                        padding:pxToRem(10px);
+                    }
+                    .fa-facebook-f {
+                        padding-left: 0px;
+                    }
+                }
+            }
+        }
+
+        .footer__top-right {
+            @include flex(row,space-between);
+            .footer__top__text {
+                color : $greyColor;
+                font-size: pxToRem(14px);
+                font-weight: 700;
+            }
+            .footer__top__form {
+                align-items: center;
+                background-color: $white-color;
+                display: flex;
+                height: pxToRem(46px);
+                width: pxToRem(400px);
+                form {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    input {
+                        border: none;
+                        flex-grow: 1;
+                        outline: none;
+                    }
+                    span {
+                        background-color: $greenColor;
+                        color : $white-color;
+                        cursor: pointer;
+                        height: pxToRem(46px);
+                        width: pxToRem(46px);
+                    }
+                }
+            }
+        }
+    }
+
+    .footer__main {
+        border-bottom: 1px solid $greyColor;
+        color : $greyColor;
+        .footer__main__left {
+            .footer__main__left__text {
+                font-size: pxToRem(12px);
+            }
+            .footer__main__left-icon {
+                color: $greenColor;
+            }
+        }
+        .footer__main__right {
+            .footer__main__right-item {
+                .footer__main__right-title {
+                    color : $greenColor;
+                    font-size: pxToRem(14px);
+                }
+                .footer__main__right-list {
+                    .footer__main__right-list-item {
+                        a {
+                            color: $greyColor;
+                            font-size: pxToRem(12px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer__bottom {
+        border-bottom: 1px solid $greyColor;
+        .footer__bottom-wrap {
+            padding: 15px 0px;
+            .nav {
+                li {
+                    margin-right: pxToRem(15px);
+                    a {
+                        color : $greyColor;
+                        font-size: pxToRem(12px);
+                    }
+                    .nav-item-icon {
+                        font-size: pxToRem(14px);
+                    }
+                }
+            }
+        }
+    }
+
+    .footer__end {
+        background-color: #434343;
+        .text-center {
+            color : #fff;
+            font-size: pxToRem(14px);
+            opacity: .9;
+        }
+    }
+}
