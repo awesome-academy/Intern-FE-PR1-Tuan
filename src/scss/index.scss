@@ -1,0 +1,13 @@
+@import './ultilities/variables';
+
+* {
+    box-sizing: border-box
+};
+
+
+@function pxToRem($px) {
+    @return $px / 16px * 1rem;
+};
+
+@import './components/header.scss';
+@import './components/footer.scss';
