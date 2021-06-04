@@ -28,7 +28,7 @@ header#header
         .container 
             .header__body-wrap 
                 .row
-                    .col-md-5.d-flex
+                    .col-md-5.d-flex.mobile-center
                         .logo-wrap 
                             a(href="index.html") 
                                 img(src="./assets/images/GreenShop.png", alt="logo image") 
@@ -36,7 +36,7 @@ header#header
                         .logo-rightd.d-flex
                             .logo-right-img 
                                 img(src="./assets/images/img-header1.png", alt="image" class="img-fluid")
-                    .col-md-7.d-flex.justify-content-end
+                    .col-md-7.d-flex.justify-content-end.mobile
                         .header__body__search.d-flex.flex-column.justify-content-center 
                             .header__phone 
                                 i(class="fas fa-phone-alt")
@@ -56,6 +56,11 @@ header#header
             .header__bottom-wrap.d-flex 
                 lable.menu-icon
                     span.nav-icon
+                .icon-wrap 
+                    span.icon-search.d-none 
+                        i(class="fas fa-search")
+                    span.icon-shopping.d-none 
+                        i(class="fas fa-shopping-cart")
                 ul.nav
                     li.nav-item 
                         a.nav-link(href="#") TRANG CHỦ

@@ -1,2 +1,91 @@
 extends ../base/base.pug
+include ../components/product.pug
+include ../components/new.pug
 
+block content
+    - let [item1,item2,item3,item4,item5,item6] = featuredProducts
+    section.banner.mb-5 
+        .banner-wrap 
+            h1.banner__title GREEN SHOP
+            h2.banner__subtitle CHO THUÊ CÂY CẢNH TẾT 2016
+            p.banner__noitce 
+                i (Miễn phí vận chuyển với những đơn hàng giá trị trên 5.000.000 đ)
+    section.featured-products
+        .container 
+            .row
+                .col-12
+                    .head-title 
+                        span Sản phẩm nổi bật  
+            .row.mb-4
+                .col-md-6.col-12
+                    .featured-products-wrap 
+                        .row 
+                            .col-12.featured-product-new
+                                .product-item-wrap 
+                                    +productItem(item1)
+                            .col-6
+                                .product-item-wrap.mt-0 
+                                    +productItem(item2)
+                            .col-6
+                                .product-item-wrap.mt-0 
+                                    +productItem(item3)
+                .col-md-6.col-12
+                    .featured-products-wrap 
+                        .row 
+                            .col-6.featured-product-sales
+                                .product-item-wrap
+                                    +productItem(item4)
+                            .col-6.featured-product-new 
+                                .product-item-wrap
+                                    +productItem(item5)
+                            .col-12.featured-product-sales
+                                .product-item-wrap.mt-0
+                                    +productItem(item6)
+    section.popular-products 
+        .container 
+            .row 
+                .col-md-3.col-12 
+                    .popular-products-wrap-hot 
+                        .row.mb-4 
+                            .col-12
+                                .hot-products__title 
+                                    span Sản phẩm mua nhiều
+                        .row.margin-t-b 
+                            each popularProduct in popularProducts
+                                .col-12
+                                    .product-item-wrap.d-flex 
+                                        +productItem(popularProduct)
+                .col-md-9.col-12
+                    .popular-products-wrap-discounted 
+                        .row.mb-4 
+                            .col-12
+                                .discounted-products__title
+                                    span Sản phẩm khuyến mại
+                        .row
+                            each discountedProduct in discountedProducts
+                                .col-md-4.col-12 
+                                    .product-item-wrap
+                                        +productItem(discountedProduct)
+    section.banner-mid 
+        .container 
+            .banner-mid-wrap 
+    section.new-products 
+        .container 
+            .new-products__title-wrap
+                span.new-products__title Sản phẩm mới
+                span.new-products__icon 
+                    i(class="fas fa-chevron-left icon1")
+                    i(class="fas fa-chevron-right icon2")
+            .row
+                each newproduct in newProducts
+                    .col-md-3.mobile
+                        .product-item-wrap 
+                            +productItem(newproduct)
+    section.news
+        .container 
+            .news-wrap 
+                .news__title 
+                    span Tin mới
+                .row.news__content 
+                    each newItem in news 
+                        +new(newItem)                  

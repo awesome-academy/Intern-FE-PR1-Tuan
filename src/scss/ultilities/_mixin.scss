@@ -1,0 +1,82 @@
+@mixin mobile { 
+    @media(max-width: 576px) {
+        @content
+    }
+};
+@mixin flexCustom($direction,$justify,$align) {
+    -webkit-box-pack: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+    -webkit-box-align: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: $direction;
+};
+
+@mixin flexCenter($direction) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+@mixin fs-fw($fontSize,$fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+};
+
+@mixin headTitleStyle {
+    border-bottom: 3px solid $greenColor;
+    color : $greenColor;
+    font-size: pxToRem(16px);
+    font-weight: 700;
+};
+
+@mixin my($mt,$mb) {
+    margin-top: $mt;
+    margin-bottom: $mb;
+}
+
+@mixin py($pt,$pb) {
+    padding-top: $pt;
+    padding-bottom: $pb;
+}
+
+@mixin fs-center($fontSize) {
+    font-size: $fontSize;
+    text-align: center;
+};
+
+@mixin fontSize-color($fontSize,$color) {
+    color : $color;
+    font-size: $fontSize;
+}
+
+@mixin backgroundImage($url,$mh,$size,$position,$repeat,$height:0) {
+    background-image: $url;
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+    width: 100%;
+    height: $height;
+    max-height: $mh;
+}
+
+@mixin flex($direction,$space) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $space;
+    padding-bottom: pxToRem(20px);
+    padding-top: pxToRem(20px);
+};
