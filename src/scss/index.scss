@@ -1,6 +1,5 @@
 @import './ultilities/variables';
 @import './ultilities/mixin';
-
 * {
     box-sizing: border-box
 };
@@ -12,3 +11,4 @@
 @import './components/header.scss';
 @import './components/footer.scss';
 @import './pages/index.scss';
+@import './pages/list.scss';

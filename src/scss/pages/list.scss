@@ -1,0 +1,328 @@
+.product-item-wrap {
+    .product-item__img {
+
+        position: relative;
+        .product-item__btn {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+            .btn__text {
+                background-color: $greenColor;
+                border-radius: pxToRem(16px);
+                color : $white-color;
+                cursor: pointer;
+                width: 1.5rem;
+                height: 1rem;
+                padding: pxToRem(5px) pxToRem(10px);
+                margin-right: pxToRem(5px);
+            }
+
+            .btn__icon {
+                i{
+                    color : $white-color;
+                    cursor: pointer;
+                    font-size: pxToRem(14px);
+                }
+            }
+        }
+
+        &::before {
+            content : "";
+            background-color: $layer-hover-color;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition:all .3s ease;
+        }
+
+        &:hover::before {
+            opacity: .4;
+        }
+
+        &:hover .product-item__btn {
+            display: block;
+        }
+    }
+}
+
+.main {
+    .main__nav {
+        @include my(pxToRem(20px),pxToRem(40px));
+        .nav {
+            .nav-item {
+                .nav-link {
+                    padding: 0;
+                    @include fontSize-color(pxToRem(12px),$greyColor)
+                }
+            }
+
+            .nav-item:last-child {
+                .nav-link {
+                    color: $greenColor;
+                }
+            }
+
+            .nav__border {
+                background-color: $greyColor;
+                width: pxToRem(1px);
+                height: pxToRem(14px);
+                transform: rotate(15deg);
+                margin: 0 pxToRem(5px);
+            }
+        }
+    }
+    .main__left {
+        .sidebar-wrap {
+            .head__title {
+                border-bottom: 1px solid $border-bottom-sidebar;
+                margin-bottom: pxToRem(20px);
+                padding-bottom: pxToRem(10px);
+
+                span {
+                    border-bottom: 3px solid $greenColor;
+                    font-weight: 600;
+                    @include py(pxToRem(10px),pxToRem(11px));
+                    @include fontSize-color(pxToRem(16px),$greenColor);
+                    @include py(pxToRem(10px),pxToRem(11px))
+                }    
+            }
+    
+            .nav {
+                .list-item {
+                    border-bottom: 1px solid $border-bottom-sidebar;
+
+                    a {
+                        text-decoration: none;
+                        @include fontSize-color(pxToRem(12px),$greyColor);
+
+                        .circle {
+                            border-radius: 50%;
+                            width: pxToRem(25px);
+                            height: pxToRem(25px);
+                        }
+
+                        .circle--green {
+                            background-color: $greenColor;
+                        }
+
+                        .circle--purple {
+                            background-color: $purple-color;
+                        }
+
+                        .circle--yellow {
+                            background-color: $yellow-color;
+                        }
+
+                        .circle--orange {
+                            background-color: $orange-color;
+                        }
+
+                        .circle--blue {
+                            background-color: $blue-color;
+                        }
+
+                        .circle--pink {
+                            background-color: $pink-color;
+                        }
+
+                        &:hover {
+                            color : $greenColor;
+                        }
+                    }
+                    @include py(pxToRem(5px),pxToRem(5px));
+                }
+            }
+        }
+    }
+
+    .main__right {
+        .banner {
+            @include backgroundImage(url(../assets/images/banner1.png),20rem,contain,center,no-repeat,0);
+            padding-top: 19%;
+        }
+
+        .taskbar {
+            @include flexCustom(row,space-between,center);
+            padding: pxToRem(10px) 0;
+
+            .taskbar__left {
+                .taskbar-list-icon1 {
+                    color : $greenColor;
+                    margin-right: 1rem;
+
+                    i {
+                        cursor: pointer;
+                    }
+                }
+
+                .taskbar-list-icon2 {
+                    color : $list-icon-color;
+
+                    i {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .taskbar__right {
+                .taskbar__sort {
+                    align-items: center;
+                    margin-right: pxToRem(30px);
+
+                    .taskbar__sort__text {
+                        @include fontSize-color(pxToRem(14px),$sort-text-color);
+                        margin-right: pxToRem(15px);
+                    }
+
+                    .taskbar__sort__form {
+                        .form-select {
+                            border: 1px solid $border-select-color;
+                            cursor: pointer;
+                            outline: none;
+                            padding: pxToRem(10px);
+                            @include fontSize-color(pxToRem(12px),$greyColor);
+                        }
+                    }
+                }
+
+                .taskbar__show {
+                    align-items: center;
+
+                    .taskbar__show__text {
+                        @include fontSize-color(pxToRem(14px),$sort-text-color);
+                        margin-right: pxToRem(15px);
+                    }
+                    
+                    .taskbar__show__form {
+                        .form-select {
+                            border: 1px solid $border-select-color;
+                            cursor: pointer;
+                            outline: none;
+                            padding: pxToRem(10px);
+                            @include fontSize-color(pxToRem(12px),$greyColor);
+                        }
+                    }
+                }
+            }
+
+            @include mobile {
+                flex-direction: column;
+
+                .taskbar__right {
+                    flex-direction: column;
+
+                    .taskbar__sort {
+                        justify-content: space-between;
+                        margin-right: 0;
+                    }
+                    
+                    .taskbar__show {
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+
+        .product-item-wrap {
+            border: 1px solid $border-grey-color;
+            @include my(pxToRem(34px),pxToRem(34px));
+
+            .product-item-content {
+                .product-item__name {
+                    color : $color-name-product;
+                    @include fs-center(pxToRem(16px));
+                }
+
+                .product-item__evaluate {
+                    @include fs-center(pxToRem(14px));
+                }
+
+                .product-item__price {
+                    text-align: center;
+
+                    .product-item__price-left {
+                        margin-right: pxToRem(5px);
+                        @include fontSize-color(pxToRem(18px),$color-price)
+                    }
+
+                    .product-item__price-right {
+                        margin-left: pxToRem(5px);
+                        @include fontSize-color(pxToRem(14px), $color-discounted-price)
+                    }
+                }
+            }
+        }
+    }
+    .pagination-custom {
+        margin-bottom: pxToRem(100px);
+
+        .pagination {
+            .page-item {
+                .page-link {
+                    color: $greyColor;
+
+                    &:hover {
+                        background-color: $greenColor;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.product-item-wrap {
+    .product-item__img {
+        position: relative;
+
+        .product-item__btn {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            
+            .btn__text {
+                background-color: $greenColor;
+                border-radius: pxToRem(16px);
+                color : $white-color;
+                cursor: pointer;
+                width: 1.5rem;
+                height: 1rem;
+                padding: pxToRem(5px) pxToRem(10px);
+                margin-right: pxToRem(5px);
+            }
+
+            .btn__icon {
+                i{
+                    color : $white-color;
+                    cursor: pointer;
+                    font-size: pxToRem(14px);
+                }
+            }
+        }
+
+        &::before {
+            content : "";
+            background-color: $layer-hover-color;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition:all .3s ease;
+        }
+
+        &:hover::before {
+            opacity: .4;
+        }
+        
+        &:hover .product-item__btn {
+            display: block;
+        }
+    }
+}
