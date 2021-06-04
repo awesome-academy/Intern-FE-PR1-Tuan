@@ -1,0 +1,79 @@
+extends ../base/base.pug
+include ../components/product.pug
+mixin renderColor(data) 
+    li.list-item.mb-2 
+        a(href="#").d-flex.align-items-center 
+            div.mr-2.circle(class=`${data.className}`)
+            span= data.name
+
+block content
+    section.main
+        .container 
+            .row 
+                .col-12.main__nav 
+                    ul.nav 
+                        li.nav-item 
+                            a(href="#").nav-link Home
+                        span.nav__border 
+                        li.nav-item
+                            a(href="#").nav-link Danh sách sản phẩm 
+                .col-md-3.main__left 
+                    .sidebar-wrap
+                        .row 
+                            each item in  productPortfolio
+                                .col-12.mb-3
+                                    .head__title 
+                                        span= item.title
+                                    ul.nav.flex-column 
+                                        each listItem in item.listContent
+                                            li.list-item.mb-2
+                                                a(href="#") 
+                                                    span.mr-1
+                                                        i.fas.fa-chevron-right
+                                                    span= listItem
+                            .col-12.mb-3
+                                .head__title 
+                                    span Tìm theo màu
+                                .nav-wrap.d-flex
+                                    ul.nav.flex-column.mr-5
+                                        each listColor in listColorLefts
+                                            +renderColor(listColor)
+                                    ul.nav.flex-column
+                                        each listColor in listColorRights
+                                            +renderColor(listColor)
+                .col-md-9.main__right 
+                    .row 
+                        .col-12 
+                            .banner 
+                        .col-12 
+                            .taskbar
+                                .taskbar__left 
+                                    span.taskbar-list-icon1 
+                                        i(class="fas fa-th-list")
+                                    span.taskbar-list-icon2  
+                                        i(class="fas fa-th-list")
+                                .taskbar__right.d-flex
+                                    .taskbar__sort.d-flex 
+                                        .taskbar__sort__text Sắp xếp theo
+                                        .taskbar__sort__form 
+                                            select.form-select(aria-label="Default select example")
+                                                option(selected='')  Tên sản phẩm
+                                                option(value='1') Cây chân chim
+                                                option(value='2') Cây cọ ta
+                                                option(value='3') Cây danh dự
+                                    .taskbar__show.d-flex 
+                                        .taskbar__show__text Show
+                                        .taskbar__show__form 
+                                            select.form-select(aria-label="Default select example")
+                                                option(selected='')  15
+                                                option(value='1') 10
+                                                option(value='2') 20
+                                                option(value='3') 25
+                        each product in horizoltalListPageProducts
+                            +productItemListPageHorizontal(product)
+            .row.justify-content-end.align-items-center.pagination-custom 
+                nav(aria-label='Page navigation example')
+                    ul.pagination
+                        each listPagination in listPaginations
+                            li.page-item.mr-2
+                                a.page-link(href='#')= listPagination              

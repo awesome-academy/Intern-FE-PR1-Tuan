@@ -1,0 +1,124 @@
+.main {
+    .main__right {
+        .horizontal-product {
+            .product-item-wrap {
+                border: 1px solid $border-grey-color;
+                max-height: 250px;
+
+                .product-item__img {
+                    width: 30%;
+                }
+
+                .product-item-content {
+                    padding: 0 pxToRem(30px);
+                    width: 70%;
+
+                    .product-item__name {
+                        padding-top: pxToRem(10px);
+                        text-align: left;
+                        @include fontSize-color(pxToRem(18px),$sort-text-color);
+                    }
+
+                    .product-item__evaluate {
+                        font-size: pxToRem(14px);
+                        text-align: left;
+                    }
+
+                    .product-item__desc {
+                        @include fontSize-color(pxToRem(12px),$desc-color);
+                    }
+
+                    .product-item__price {
+                        text-align: left;
+                    }
+
+                    .product-item__btn {
+                        .btn--buy {
+                            background-color: $greenColor;
+                            border-radius: pxToRem(22px);
+                            color : $white-color;
+                            cursor: pointer;
+                            width: pxToRem(140px);
+                            height: pxToRem(44px);
+                            text-align: center;
+                            @include flexCenter(row);
+                        }
+
+                        .btn--search {
+                            span {
+                                @include spanStyleBtnHorizoltalListPage;
+                                @include flexCenter(row);
+                            }
+                        }
+
+                        .btn--favourite {
+                            span {
+                                @include spanStyleBtnHorizoltalListPage;
+                                @include flexCenter(row);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include mobile {
+            .product-item-wrap {
+                flex-direction: column;
+                max-height: pxToRem(600px)!important;
+
+                .product-item__img {
+                    width: 100%!important;
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .product-item-content {
+                    width: 100%!important;
+
+                    .product-item__name {
+                        text-align: center;
+                    }
+                    
+                    .product-item__evaluate {
+                        text-align: center!important;
+                    }
+
+                    .product-item__price {
+                        text-align: center!important;
+                    }
+
+                    .product-item__btn {
+                        .btn--buy {
+                            span {
+                                font-size: pxToRem(12px);
+                            }
+                        }
+
+                        .btn--search {
+                            span {
+                                width : 1.75rem!important;
+                                height : 1.75rem!important;
+
+                                i {
+                                    font-size: pxToRem(12px)!important;
+                                }
+                            }
+                        }
+
+                        .btn--favourite {
+                            span {
+                                width : 1.75rem!important;
+                                height : 1.75rem!important;
+                                
+                                i {
+                                    font-size: pxToRem(12px)!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

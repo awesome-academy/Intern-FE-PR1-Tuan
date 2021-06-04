@@ -80,3 +80,13 @@
     padding-bottom: pxToRem(20px);
     padding-top: pxToRem(20px);
 };
+
+@mixin spanStyleBtnHorizoltalListPage {
+    background-color: $white-color;
+    border-radius: 50%;
+    border: pxToRem(1px) solid $border-grey-color;
+    color: $sort-text-color;
+    cursor: pointer;
+    width: pxToRem(44px);
+    height: pxToRem(44px);
+}

@@ -50,3 +50,28 @@ mixin productItemListPage(data)
                 .product-item__price.py-2.pb-3 
                     span.product-item__price-left= data.price
                     span.product-item__price-right= data.price
+mixin productItemListPageHorizontal(data)
+    .col-12.horizontal-product
+        .product-item-wrap.d-flex
+            .product-item__img 
+                img(src=`${data.src}`, alt="tree img" class="img-fluid")
+            .product-item-content
+                p.product-item__name.mb-1= data.name
+                .product-item__evaluate.mb-1
+                    i(class="fas fa-star text-warning")
+                    i(class="fas fa-star text-warning")
+                    i(class="fas fa-star text-warning")
+                    i(class="fas fa-star text-warning")
+                    i(class="fas fa-star text-warning")
+                p.product-item__desc.m-0.pb-2= data.desc
+                .product-item__price.pb-2 
+                    span.product-item__price-left= data.price
+                .product-item__btn.d-flex.align-items-center
+                    .btn--buy.mr-3 
+                        span Mua ngay
+                    .btn--search.mr-3 
+                        span
+                            i(class="fas fa-search")
+                    .btn--favourite.mr-3 
+                        span
+                            i(class="fas fa-heart")
