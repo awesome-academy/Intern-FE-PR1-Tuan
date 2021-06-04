@@ -1,0 +1,13 @@
+mixin new(data)
+    .col-md-4 
+        .new-item-wrap
+            .new__img 
+                img(src=`${data.src}`, alt="new image")
+            .new__content 
+                .new__time
+                    i=  data.time
+                .new__title=  data.title
+                .new__subtitle= data.subtitle  
+                .new__btn-more
+                    a(href="#") 
+                        i= data.btn

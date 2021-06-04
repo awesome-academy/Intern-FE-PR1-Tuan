@@ -1,9 +1,9 @@
 @import './ultilities/variables';
+@import './ultilities/mixin';
 
 * {
     box-sizing: border-box
 };
-
 
 @function pxToRem($px) {
     @return $px / 16px * 1rem;
@@ -11,3 +11,4 @@
 
 @import './components/header.scss';
 @import './components/footer.scss';
+@import './pages/index.scss';

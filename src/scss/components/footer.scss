@@ -1,17 +1,12 @@
-@mixin flex($direction,$space) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $space;
-    padding-bottom: pxToRem(20px);
-    padding-top: pxToRem(20px);
-};
-
 .footer {
     background-color: $background-color;
+
     .footer__top {
         border-bottom: 1px solid $greyColor;
+
         .footer__top-left {
             @include flex(column,center);
+
             .footer__top__title {
                 color : $greyColor;
                 font-size: pxToRem(14px);
@@ -43,7 +38,8 @@
                 background-color: $white-color;
                 display: flex;
                 height: pxToRem(46px);
-                width: pxToRem(400px);
+                max-width: pxToRem(400px);
+
                 form {
                     display: flex;
                     justify-content: flex-end;
@@ -96,11 +92,14 @@
 
     .footer__bottom {
         border-bottom: 1px solid $greyColor;
+
         .footer__bottom-wrap {
             padding: 15px 0px;
+
             .nav {
                 li {
                     margin-right: pxToRem(15px);
+
                     a {
                         color : $greyColor;
                         font-size: pxToRem(12px);
@@ -115,10 +114,59 @@
 
     .footer__end {
         background-color: #434343;
+
         .text-center {
-            color : #fff;
+            color : $white-color;
             font-size: pxToRem(14px);
             opacity: .9;
+        }
+    }
+
+    @include mobile {
+        .footer__top {
+            .footer__top-right {
+                flex-direction: column;
+
+                .footer__top__text {
+                    margin-bottom: 1rem;
+
+                    .mobile {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .footer__main {
+            .footer__main__left {
+                text-align: center; 
+
+                .footer__main__left-phone {
+                    display: none!important;
+                }
+
+                .footer__main__left-email {
+                    display: none!important;
+                }
+            }
+
+            .footer__main__right {
+                .mobile {
+                    flex-direction: column;
+
+                    .footer__main__right-item {
+                        margin-bottom: pxToRem(50px);
+                    }
+
+                    .footer__main__right-item:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+
+        .footer__bottom {
+            display: none;
         }
     }
 }
