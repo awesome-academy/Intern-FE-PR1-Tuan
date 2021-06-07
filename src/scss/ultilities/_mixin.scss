@@ -111,3 +111,11 @@
     padding-bottom: $pb;
     font-size: $fs;
 }
+
+@mixin buttonStyleCartPage($bgColor,$color) {
+    border-radius: pxToRem(22px);
+    background-color: $bgColor;
+    color: $color;
+    cursor: pointer;
+    padding: pxToRem(10px) pxToRem(20px);
+}

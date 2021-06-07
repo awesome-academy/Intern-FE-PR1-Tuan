@@ -1,0 +1,53 @@
+extends ../base/base.pug
+
+block content
+    section.main.cart
+        .container
+            .row
+                .col-12.main__nav 
+                    ul.nav 
+                        li.nav-item 
+                            a(href="#").nav-link Home
+                        span.nav__border 
+                        li.nav-item
+                            a(href="#").nav-link Cây dạ lam
+                .col-12
+                    .cart__title 
+                        h1 GIỎ HÀNG 
+                .col-12.cart__table
+                    table.table.table-bordered
+                        thead 
+                            tr 
+                                each title in carts.titles 
+                                    th= title 
+                        tbody
+                            each product in carts.products
+                                tr 
+                                    td 
+                                        img(src=`${product.src}`, alt="tree img" class="img-fluid")
+                                    td.cart__name= product.name
+                                    td.cart__price= product.price
+                                    td.cart__amount
+                                        div.cart__amount-wrap 
+                                            input(type="number" , value= product.amount, min="1" ,max="10")
+                                    td.cart__total= product.total
+                                    td.cart__icon 
+                                        span  
+                                            i(class="fas fa-trash-alt")
+                    .cart__btn.text-right
+                        button.button.button--white Huỷ đơn hàng 
+                        button.button.button--green Tiếp tục mua
+                .col-md-5.col-12.cart__bill 
+                    table.table.table-bordered
+                        tbody
+                            tr
+                                td Tổng tiền (Chưa thuế)
+                                td 270.000 đ
+                            tr
+                                td Thuế (VAT 10%)
+                                td 27.000 đ
+                            tr
+                                td(scope='col') Tổng phải thanh toán 
+                                td(scope='col') 297.000 đ
+                    .cart__btn.text-right
+                        button.button.button--green Thanh toán

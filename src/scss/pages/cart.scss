@@ -1,0 +1,143 @@
+.cart {
+    &__title {
+        h1 {
+            font-weight: 600;
+            @include fontSize-color(pxToRem(18px),$greenColor)
+        }
+    }
+}
+.cart {
+    &__table {
+        margin-bottom: pxToRem(70px);
+        .table {
+            @include my(pxToRem(70px),pxToRem(40px));
+
+            thead {
+                tr {
+                    th {
+                        border-bottom: 1px;
+                        background-color: $greenColor;
+                        border-bottom-width: 1px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        @include fontSize-color(pxToRem(14px),$white-color);
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        color: $greyColor;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+
+                    .cart__name {
+                        color: $greenColor;
+                    }
+                    
+                    td:first-child {
+                        max-width: 7rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &__table {
+            overflow-x: scroll;
+        }
+    }
+}
+
+.cart {
+    &__amount {
+        &-wrap {
+            input {
+                color: $greyColor;
+                border: 1px solid $border-grey-color;
+                width: pxToRem(30px);
+                height: pxToRem(30px);
+            }
+        }
+    }
+
+    &__name {
+        text-transform: uppercase;
+        @include fontSize-color(pxToRem(18px),$greenColor);
+    } 
+}
+
+.cart {
+    &__btn {
+        .button--white {
+            border: 1px solid $greenColor;
+            margin-right: pxToRem(15px);
+            @include buttonStyleCartPage($white-color,$greenColor);
+        }
+
+        .button--green {
+            border: none;
+            @include buttonStyleCartPage($greenColor,$white-color);
+        }
+    }
+    @include mobile {
+        &__btn {
+            display: flex;
+            justify-content: center;
+            
+            .button--green {
+                font-size: pxToRem(12px);
+                padding: pxToRem(5px) pxToRem(10px);
+            }
+
+            .button--white {
+                font-size: pxToRem(12px);
+                padding: pxToRem(5px) pxToRem(10px);
+            }
+        }
+    }
+}
+
+.cart {
+    &__bill {
+        margin-left: auto;
+        margin-bottom: pxToRem(200px);
+
+        .table {
+            margin-bottom: pxToRem(40px);
+
+            tbody {
+                tr {
+                    td {
+                        color: $greyColor;
+                        text-transform: uppercase;
+                        vertical-align: middle; 
+                    }
+                }
+            }
+
+            tfoot {
+                tr {
+                    td {
+                        background-color: $greenColor;
+                        color: $white-color;
+                    }
+
+                    td:first-child {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &__bill {
+            margin-bottom: pxToRem(40px);
+            overflow-x: scroll;
+        }
+    }
+}
