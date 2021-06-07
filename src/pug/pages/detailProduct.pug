@@ -1,0 +1,83 @@
+extends ../base/base.pug
+include ../components/product.pug
+
+block content
+    section.main.product-detail
+        .container
+            .row
+                .col-12.main__nav 
+                    ul.nav 
+                        li.nav-item 
+                            a(href="#").nav-link Home
+                        span.nav__border 
+                        li.nav-item
+                            a(href="#").nav-link Cây dạ lam
+                .col-md-5.col-12.main__left 
+                    .row 
+                        .col-md-12.mb-4
+                            .product-detail__img
+                                img(src="./assets/images/spx2-15.png", alt="tree img" class="img-fluid")
+                        .col-md-12.mb-4
+                            .product-detail__img--slide.d-flex.flex-nowrap.justify-content-between
+                                each url in urlImgs 
+                                    .product-detail__img-wrap.d-flex.justify-content-center.align-items-center
+                                        img(src=`${url.src}`, alt="tree img" class="img-fluid")
+                .col-md-7.col-12.main__right 
+                    .product-detail__content 
+                        .product-detail__content-name Cây dạ lam
+                        .product-detail__content-evaluate 
+                            each n in [0,1,2,3,4]  
+                                i(class="fas fa-star text-warning")
+                        .product-detail__content-price 
+                            span.product-detail__price--current 490.000 đ
+                            span.product-detail__price--old 490.000
+                        .product-detail__content-des Cây mọc thành bụi thưa,thân vươn thẳng với chiều cao cây trung bình từ 0,8-1,2m.Lá hình trứng,mép lá nguyên gân lá nổi rõ,phiến rộng khoảng từ 15-20cm.Lá có màu xanh đậm ở mặt trên,quanh gân lá có màu trắng sữa,mặt dưới lá màu nhạt hơn.Lá cây dạ lam mọc cách,cuống lá dài khi rụng để lại các khía màu nâu nhạt.
+                        .product-detail__content-amount 
+                            .product-detail__content-amount-title Số lượng
+                            .product-detail__content-amount-decrease -
+                            .product-detail__content-amount-number 1
+                            .product-detail__content-amount-increase +
+                        .product-detail__content-btn
+                            button.button.button-round Mua ngay 
+                            .product-detail__content-btn-icon
+                                i(class="fas fa-search")
+                            .product-detail__content-btn-icon
+                                i(class="fas fa-heart")
+                        .product-detai__social 
+                            img(src="./assets/images/link.png",alt="link image" class="img-fluid")
+                .col-md-12.main__info 
+                    .product-detail__info 
+                        ul.nav 
+                            li.nav-item
+                                a(href="#info1" class="nav-link") THÔNG TIN SẢN PHẨM
+                            li.nav-item 
+                                a(href="#" class="nav-link") KHÁCH HÀNG ĐÁNH GIÁ
+                            li.nav-item 
+                                a(href="#" class="nav-link") THẺ TAG
+                        #info1.product-detail__info-content 
+                            .product-detail__info-content-common-name 
+                                span Tên phổ thông:
+                                span= info.commonName
+                            .product-detail__info-content-science-name 
+                                span Tên khoa học:
+                                span= info.scienceName 
+                            .product-detail__info-content-last-name
+                                span Họ thực vật:
+                                span= info.lastName 
+                            .product-detail__info-content-height 
+                                span Chiều cao:
+                                span= info.height
+                            .product-detail__info-content-source= info.source
+                            .product-detail__info-content-desc= info.desc
+                .col-md-12.relate-products-title
+                    .relate-products-title-wrap.d-flex.justify-content-between.align-items-center
+                        span.relate-products-title-green Sản phẩm cùng loại
+                        span.relate-products-title-icon
+                            i(class="fas fa-chevron-left icon1")
+                            i(class="fas fa-chevron-right icon2")
+                .col-md-12.relate-products
+                    .row
+                        each relateProduct in relateProducts
+                            .col-md-3.mobile
+                                .product-item-wrap 
+                                    +productItem(relateProduct)
