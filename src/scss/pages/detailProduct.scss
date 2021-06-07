@@ -1,0 +1,285 @@
+.main {
+    &__left {
+        margin-bottom: pxToRem(110px);
+
+        .product-detail__img--slide {
+            .product-detail__img-wrap {
+                img {
+                    width: 80%;
+                }
+            }
+
+            &:first-child {
+                justify-content: flex-start!important;
+            }
+        }
+    }
+
+    &__right {
+        margin-bottom: pxToRem(110px);
+
+        .product-detail__content {
+            &-name {
+                @include fontSize-color(pxToRem(18px),$sort-text-color);
+                @include py(pxToRem(5px),pxToRem(5px))
+            }
+
+            &-evaluate {
+                font-size: pxToRem(12px);
+                padding-bottom: pxToRem(5px);
+            }
+
+            &-price {
+                padding-bottom: pxToRem(5px);
+
+                .product-detail__price--current {
+                    @include fontSize-color(pxToRem(18px),$color-price);
+                    margin-right: pxToRem(10px);
+                }
+
+                .product-detail__price--old {
+                    @include fontSize-color(pxToRem(14px),$greyColor);
+                }
+            }
+
+            &-des {
+                border-top: 1px solid $border-grey-color;
+                border-bottom: 1px solid $border-grey-color;
+                @include fontSize-color(pxToRem(12px),$span-color-header);
+                @include py(pxToRem(15px),pxToRem(15px));
+                
+            }
+
+            &-amount {
+                align-items: center;
+                border-bottom: 1px solid $border-grey-color;
+                display: flex;
+                @include py(pxToRem(15px),pxToRem(15px));
+
+                &-title {
+                    margin-right: pxToRem(15px);
+                    font-size: pxToRem(14px);
+                }
+
+                &-decrease {
+                    border : 1px solid $border-grey-color;
+                    cursor: pointer;
+                    margin-right: pxToRem(5px);
+                    @include py(pxToRem(5px),pxToRem(5px));
+                    @include px(pxToRem(15px),pxToRem(15px));
+                }
+
+                &-number {
+                    border : 1px solid $border-grey-color;
+                    cursor: pointer;
+                    margin-right: pxToRem(5px);
+                    @include py(pxToRem(5px),pxToRem(5px));
+                    @include px(pxToRem(30px),pxToRem(30px));
+                }
+
+                &-increase {
+                    border : 1px solid $border-grey-color;
+                    cursor: pointer;
+                    margin-right: pxToRem(5px);
+                    @include py(pxToRem(5px),pxToRem(5px));
+                    @include px(pxToRem(15px),pxToRem(15px));
+                }
+            }
+
+            &-btn {
+                display: flex;
+                align-items: center;
+
+                @include py(pxToRem(15px),pxToRem(15px));
+                .button {
+                    border: none;
+                    border-radius: pxToRem(18px);
+                    background-color: $greenColor;
+                    color: $white-color;
+                    cursor: pointer;
+                    padding: pxToRem(5px) pxToRem(20px);
+                    margin-right: pxToRem(10px);
+                }
+
+                &-icon {
+                    border : 1px solid $border-grey-color;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    width: pxToRem(44px);
+                    height: pxToRem(44px);
+                    margin-right: pxToRem(10px);
+                    @include flexCenter(row);
+
+                    i {
+                        font-size: pxToRem(12px);
+                    }
+                }   
+            }
+        }
+    }
+
+    .main__info {
+        margin-bottom: pxToRem(70px);
+
+        .product-detail__info {
+            .nav {
+                &-item {
+
+                    .nav-link {
+                        color: $info-titel-color;
+                        border-bottom: 1px solid $border-grey-color;
+                        padding: .5rem pxToRem(70px);
+
+                        &:hover {
+                            color : $greenColor!important;
+                        }
+                    }
+                }
+                &-item:first-child {
+                    .nav-link {
+                        border-top: 2px solid $span-color-header;
+                        border-left: 1px solid $border-grey-color;
+                        border-right: 1px solid $border-grey-color;
+                        border-bottom: none;
+                    }   
+                   
+                }
+                &-item:last-child {
+                    flex-grow: 1;
+                }
+            }
+
+            &-content {
+                border-left: 1px solid $border-grey-color;
+                border-right: 1px solid $border-grey-color;
+                border-bottom: 1px solid $border-grey-color;
+                @include py(pxToRem(40px),pxToRem(20px));
+                @include px(pxToRem(30px),pxToRem(30px));
+
+                &-common-name {
+                    @include styleInfoProductDetailPage(pxToRem(20px),pxToRem(12px),$greyColor);
+                }    
+
+                &-science-name {
+                    @include styleInfoProductDetailPage(pxToRem(20px),pxToRem(12px),$greyColor);
+                }    
+                
+                &-last-name {
+                    @include styleInfoProductDetailPage(pxToRem(20px),pxToRem(12px),$greyColor);
+                }
+
+                &-height {
+                    @include styleInfoProductDetailPage(pxToRem(20px),pxToRem(12px),$greyColor);
+                }
+
+                &-source {
+                    @include styleInfoProductDetailPage(pxToRem(20px),pxToRem(12px),$greyColor);
+                }
+
+                &-desc {
+                    @include fontSize-color(pxToRem(12px),$greyColor);
+                }       
+            }
+        }
+    }
+    .relate-products-title {
+        margin-bottom: pxToRem(20px);
+
+        &-wrap {
+            border-bottom: 1px solid $border-grey-color;
+
+            .relate-products-title-green {
+                font-weight: 600;
+                border-bottom: 3px solid $greenColor;
+                @include py(pxToRem(10px),pxToRem(10px));
+                @include fontSize-color(pxToRem(16px),$greenColor)
+            }
+
+            .relate-products-title-icon {
+                display: flex;
+
+                .icon1 {
+                    margin-right: pxToRem(15px);
+                    @include iconStyleDetailProductPage;
+                    @include flexCenter(row);
+                }
+
+                .icon2 {
+                    @include iconStyleDetailProductPage;
+                    @include flexCenter(row);
+                }
+            }
+        }
+    }
+    .relate-products {
+        margin-bottom: pxToRem(70px);
+        
+        .product-item-wrap {
+            border: 1px solid $border-grey-color;
+
+            .product-item-content {
+                text-align: center;
+
+                .product-item__evaluate {
+                    font-size: pxToRem(12px);
+                }
+
+                .product-item__price {
+                    &-left {
+                        color: $color-price;
+                        padding-right: pxToRem(5px);
+                    }
+
+                    &-right {
+                        padding-left: pxToRem(5px);
+                        text-decoration: line-through;
+                        @include fontSize-color(pxToRem(12px),$greyColor);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &__left {
+            margin-bottom: 0;
+        }
+
+        &__right {
+            margin-bottom: pxToRem(40px);
+
+            .product-detail__content {
+                text-align: center;
+
+                &-amount {
+                    justify-content: center;
+                }
+
+                &-btn {
+                    justify-content: center;
+                }
+            }
+        }
+
+        &__info {
+            .nav {
+                justify-content: center;
+                &-item {
+
+                    .nav-link {
+                        border: none!important;
+                        padding-left: pxToRem(20px)!important;
+                        padding-right: pxToRem(20px)!important;
+                    }
+                }
+                
+                &-item:last-child {
+                    flex-grow: 0!important;
+                }
+            }
+            .product-detail__info-content {
+                border-top: 1px solid $border-grey-color;
+            }
+        }
+    }
+}

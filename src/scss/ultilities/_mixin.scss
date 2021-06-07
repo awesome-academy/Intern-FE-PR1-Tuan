@@ -3,18 +3,18 @@
         @content
     }
 };
-@mixin flexCustom($direction,$justify,$align) {
+@mixin flexCustom($direction,$justify:flex-start,$align:flex-start) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: $justify;
     -ms-flex-pack: $justify;
     justify-content: $justify;
     -webkit-box-align: $align;
     -ms-flex-align: $align;
     align-items: $align;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -25,11 +25,19 @@
 };
 
 @mixin flexCenter($direction) {
-    align-items: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: $direction;
 }
+
+@mixin flex($direction,$space) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $space;
+    padding-bottom: pxToRem(20px);
+    padding-top: pxToRem(20px);
+};
 
 @mixin fs-fw($fontSize,$fontWeight) {
     font-size: $fontSize;
@@ -38,8 +46,8 @@
 
 @mixin headTitleStyle {
     border-bottom: 3px solid $greenColor;
-    color : $greenColor;
     font-size: pxToRem(16px);
+    color : $greenColor;
     font-weight: 700;
 };
 
@@ -65,28 +73,41 @@
 
 @mixin backgroundImage($url,$mh,$size,$position,$repeat,$height:0) {
     background-image: $url;
-    background-size: $size;
-    background-position: $position;
-    background-repeat: $repeat;
     width: 100%;
     height: $height;
     max-height: $mh;
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
 }
 
-@mixin flex($direction,$space) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $space;
-    padding-bottom: pxToRem(20px);
-    padding-top: pxToRem(20px);
-};
-
 @mixin spanStyleBtnHorizoltalListPage {
-    background-color: $white-color;
+    background-color: #fff;
     border-radius: 50%;
     border: pxToRem(1px) solid $border-grey-color;
     color: $sort-text-color;
     cursor: pointer;
     width: pxToRem(44px);
     height: pxToRem(44px);
+}
+
+@mixin px($pl,$pr) {
+    padding-left : $pl;
+    padding-right: $pr;
+}
+
+@mixin iconStyleDetailProductPage {
+    border-radius: 50%;
+    border: 1px solid;
+    color: $greyColor;
+    cursor: pointer;
+    font-size: pxToRem(12px);
+    width: pxToRem(24px);
+    height: pxToRem(24px);
+}
+
+@mixin styleInfoProductDetailPage($pb,$fs,$color) {
+    color: $color;
+    padding-bottom: $pb;
+    font-size: $fs;
 }
