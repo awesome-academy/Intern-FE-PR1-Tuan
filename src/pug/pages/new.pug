@@ -1,0 +1,52 @@
+extends ../base/base.pug
+include ../components/newItem.pug
+
+block content
+    - let firstItem = productPortfolio[0]
+    section.main
+        .container 
+            .row 
+                .col-12.main__nav 
+                    ul.nav 
+                        li.nav-item 
+                            a(href="#").nav-link Home
+                        span.nav__border 
+                        li.nav-item
+                            a(href="#").nav-link Cây dạ lam 
+                .col-md-3.main__left 
+                    .sidebar-wrap
+                        .row 
+                            .col-12.mb-3
+                                .head__title 
+                                    span= firstItem.title
+                                ul.nav.flex-column 
+                                    each listItem in firstItem.listContent
+                                        li.list-item.mb-2
+                                            a(href="#") 
+                                                span.mr-1
+                                                    i.fas.fa-chevron-right
+                                                span= listItem
+                            .col-12.mb-3
+                                .head__title.mb-5 
+                                        span Tin tức nổi bật 
+                                each newContentSidebar in newContentSidebars
+                                    .new-content-sidebar.d-flex.mb-4 
+                                        img(src=`${newContentSidebar.src}`, alt="tree img" class="img-fluid")
+                                        .new-content-sidebar__title= newContentSidebar.title
+                            .col-12.mb-3
+                                .head__title.mb-5 
+                                    span Blog  tag
+                                .blog.d-flex.flex-wrap
+                                    each blog in blogs
+                                        .blog-item.py-1.px-3.my-1.mr-2= blog 
+                .col-md-9.main__right 
+                    .row 
+                        .col-12
+                            each newItem in newItems 
+                                +newItem(newItem)
+            .row.justify-content-end.align-items-center.pagination-custom 
+                nav(aria-label='Page navigation example')
+                    ul.pagination
+                        each listPagination in listPaginations
+                            li.page-item.mr-2
+                                a.page-link(href='#')= listPagination  
