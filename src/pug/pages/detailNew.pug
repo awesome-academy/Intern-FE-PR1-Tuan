@@ -1,0 +1,90 @@
+extends ../base/base.pug
+include ../components/newItem.pug
+include ../components/newItemDetail.pug
+
+block content
+    - let firstItem = productPortfolio[0]
+    section.main
+        .container 
+            .row 
+                .col-12.main__nav 
+                    ul.nav 
+                        li.nav-item 
+                            a(href="#").nav-link Home
+                        span.nav__border 
+                        li.nav-item
+                            a(href="#").nav-link Cây dạ lam 
+                .col-md-3.main__left 
+                    .sidebar-wrap
+                        .row 
+                            .col-12.mb-3
+                                .head__title 
+                                    span= firstItem.title
+                                ul.nav.flex-column 
+                                    each listItem in firstItem.listContent
+                                        li.list-item.mb-2
+                                            a(href="#") 
+                                                span.mr-1
+                                                    i.fas.fa-chevron-right
+                                                span= listItem
+                            .col-12.mb-3
+                                .head__title.mb-5 
+                                        span Tin tức nổi bật 
+                                each newContentSidebar in newContentSidebars
+                                    .new-content-sidebar.d-flex.mb-4 
+                                        img(src=`${newContentSidebar.src}`, alt="tree img" class="img-fluid")
+                                        .new-content-sidebar__title= newContentSidebar.title
+                            .col-12.mb-3
+                                .head__title.mb-5 
+                                    span Blog  tag
+                                .blog.d-flex.flex-wrap
+                                    each blog in blogs
+                                        .blog-item.py-1.px-3.my-1.mr-2= blog 
+                .col-md-9.main__right 
+                    .row 
+                        .col-12
+                            +newItem(newItems[0])
+                        .col-12.detail-new.mb-5
+                            +newItemDetail(newItemDetail[0])
+                        .col-12.comment.mb-4 
+                            .comment__title.mb-5 Bình luận (3)
+                            .comment__content
+                                .comment__item
+                                    .comment__item-parent.d-flex
+                                        .comment__item__img.mr-4
+                                            img(src="./assets/images/avatar.png", alt="avatar img" class="img-fluid")
+                                        .comment__item__body
+                                            .comment__item__body-name.mb-3.d-flex.justify-content-between 
+                                                .name Nguyễn Văn An 
+                                                .rep 
+                                                    i Trả lời
+                                            .comment__item__body-content.mb-3 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. 
+                                            .comment__item__body-time.pb-4
+                                                i Thứ 7, 26/12/2015 12: 00 AM
+                                            //- sub comment 
+                                            .comment__item-sub.d-flex.py-4 
+                                                .comment__item__img.mr-4
+                                                    img(src="./assets/images/avatar.png", alt="avatar img" class="img-fluid")
+                                                .comment__item__body
+                                                    .comment__item__body-name.mb-3.d-flex.justify-content-between 
+                                                        .name Nguyễn Văn An 
+                                                        .rep 
+                                                            i Trả lời
+                                                    .comment__item__body-content.mb-3 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. 
+                                                    .comment__item__body-time.border-0 
+                                                        i Thứ 7, 26/12/2015 12: 00 AM
+
+                        .col-12.create-comment.mb-4 
+                            .create-comment__title.mb-4 VIẾT BÌNH LUẬN
+                            form(action="#")
+                                .input-group.row.mb-3
+                                    .col-md-4 
+                                        input(type="text" class="form-control" placeholder="Họ và tên:")
+                                    .col-md-4 
+                                        input(type="email" class="form-control" placeholder="Email:")
+                                    .col-md-4 
+                                        input(type="number" class="form-control" placeholder="Phone:")
+                                .input-group.mb-3
+                                    textarea(placeholder="Bình luận:")
+                                .btn-wrap.d-flex.jusfity-content-end
+                                    button.button.ml-auto Gửi
