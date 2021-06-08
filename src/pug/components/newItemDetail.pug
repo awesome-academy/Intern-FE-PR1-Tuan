@@ -1,0 +1,10 @@
+mixin newItemDetail(data)
+    .detail-new__title 
+        p= data.title
+    .detail-new__desc
+        each desc in data.descs
+            p= desc 
+    .detail-new__img 
+        img(src=`${data.src}`, alt="new img" class="img-fluid")
+    .detail-new__desc 
+        p= data.lastDesc
