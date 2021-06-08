@@ -1,0 +1,90 @@
+.main {
+    @include mobile {
+        .container {
+            .row {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+.map {
+    margin-bottom: pxToRem(60px);
+}
+
+.form {
+    margin-bottom: pxToRem(100px);
+
+    &__title {
+        font-weight: 700;
+        text-transform: uppercase;
+        @include fontSize-color(pxToRem(24px),$greenColor);
+    }
+
+    label {
+        align-items: flex-start;
+        color: $greyColor;
+        display: flex;
+        
+        i {
+            padding-top: pxToRem(6px);
+            margin-left: pxToRem(2px);
+            @include fontSize-color(pxToRem(8px),$color-price);
+        }
+    }
+
+    input {
+        height: pxToRem(45px);
+    }
+
+    textarea {
+        border: 1px solid $border-grey-color;
+        width: 100%;
+        height: pxToRem(140px);
+        outline: none;
+    }
+
+    &__brand {
+        &__name {
+            color: $greenColor;
+            margin-bottom: 0;
+        }
+
+        p {
+            letter-spacing: 1px;
+            @include fontSize-color(pxToRem(18px),$greyColor);
+        }
+    }
+
+    .desc {
+        @include fontSize-color(pxToRem(14px),$greyColor);
+    }
+
+    .phone {
+        span {
+            color: $greenColor;
+            margin-right: pxToRem(22px);
+        }
+
+        p {
+            @include fontSize-color(pxToRem(14px),$greyColor);
+        }
+    }
+
+    .email {
+        span {
+            color: $greenColor;
+            margin-right: pxToRem(22px);
+        }
+
+        p {
+            @include fontSize-color(pxToRem(14px),$greyColor);
+        }
+    }
+
+    @include mobile {
+        form {
+            margin-bottom: pxToRem(40px);
+        }
+    }
+}
