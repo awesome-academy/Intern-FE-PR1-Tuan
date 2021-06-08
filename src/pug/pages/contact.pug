@@ -1,0 +1,46 @@
+extends ../base/base.pug
+
+block content 
+    section.main
+        .container 
+            .row 
+                .col-12.main__nav 
+                    ul.nav 
+                        li.nav-item 
+                            a(href="#").nav-link Home
+                        span.nav__border 
+                        li.nav-item
+                            a(href="#").nav-link Liên hệ
+    section.map 
+        img(src="./assets/images/map.png", alt="map img" class="img-fluid") 
+    section.form 
+        .container 
+            .row 
+                .col-md-6.col-12
+                    .form__title thông tin liên hệ
+                    form.d-flex.flex-wrap.mt-4(action="#")
+                        label(for="inputName") Họ và tên
+                            i.fas.fa-star
+                        input(type="text" id="inputName" class="form-control mb-4")
+                        label(for="inputEmail") Địa chỉ email   
+                            i.fas.fa-star
+                        input(type="text" id="inputEmail" class="form-control mb-4")
+                        label(for="inputPhone") Số ĐT   
+                            i.fas.fa-star
+                        input(type="text" id="inputPhone" class="form-control mb-4")
+                        label(for="comment") Bình luận
+                            i.fas.fa-star
+                        textarea(id="comment")
+                .col-md-6.col-12
+                    .form__brand 
+                        h1.form__brand__name Green Shop
+                        p Món quà từ thiên niên
+                    p.desc DKT được thành lập với niềm đam mê và khát vọng thành công trong lĩnh vực Thương mại điện tử.Chúng tôi đã và đang khẳng định được vị trí hàng đầu bằng những sản phẩm
+                    .phone.d-flex 
+                        span.footer__main__left-icon
+                            <i class="fas fa-mobile-alt"></i>
+                        p Điện thoại:(84-4) 66.558.868
+                    .email.d-flex 
+                        span.footer__main__left-icon.mr-3
+                            <i class="far fa-envelope"></i>
+                        p Email: info@dkt.com.vn
