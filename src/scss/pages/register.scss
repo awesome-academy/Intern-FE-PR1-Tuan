@@ -1,7 +1,7 @@
 .main {
-    .form-register {
+    .form-register{
         @include my(1.5rem,2.5rem);
-
+        
         &__title {
             font-weight: 700;
             text-transform: uppercase;
