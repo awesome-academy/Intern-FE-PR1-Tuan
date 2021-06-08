@@ -1,0 +1,51 @@
+extends ../base/base.pug
+
+block content 
+    section.main
+        .container 
+            .row 
+                .col-12.main__nav 
+                    ul.nav 
+                        li.nav-item 
+                            a(href="#").nav-link Home
+                        span.nav__border 
+                        li.nav-item
+                            a(href="#").nav-link Đăng kí
+            .row.form-register
+                .col-12
+                    form.row(action="#")
+                        .col-12 
+                            .form-login__title thông tin cá nhân 
+                        .col-md-6.my-3 
+                            label(for="inputName") Họ và tên
+                                i.fas.fa-star
+                            input(type="text" id="inputName" class="form-control") 
+                        .col-md-6.my-3 
+                            label(for="inputPhone") Số ĐT
+                                i.fas.fa-star
+                            input(type="number" id="inputPhone" class="form-control") 
+                        .col-md-6.my-3 
+                            label(for="inputEmail") Địa chỉ email
+                                i.fas.fa-star
+                            input(type="email" id="inputEmail" class="form-control") 
+                        .col-md-6.my-3 
+                            label(for="inputWeb") Website của bạn
+                                i.fas.fa-star
+                            input(type="text" id="inputWeb" class="form-control")
+                        .col-12 
+                            .form-check 
+                                input(type="checkbox" class="form-check-input" id="gridCheck") 
+                                label(for="gridCheck" class="form-check-label") Đăng kí nhận thông tin qua email
+                        .col-12.mt-5 
+                            .form-login__title thông tin tài khoản
+                        .col-md-6.my-3 
+                            label(for="inputName") Mật khẩu
+                                i.fas.fa-star
+                            input(type="password" id="inputName" class="form-control") 
+                        .col-md-6.my-3 
+                            label(for="inputPhone") Nhập lại mật khẩu
+                                i.fas.fa-star
+                            input(type="password" id="inputPhone" class="form-control")
+                        .col-md-6.my-3.mb-5.btn-wrap 
+                            button.btn.btn--back QUAY LẠI
+                            button.btn.btn--register ĐĂNG KÍ

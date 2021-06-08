@@ -1,0 +1,59 @@
+.main {
+    .form-register {
+        @include my(1.5rem,2.5rem);
+
+        &__title {
+            font-weight: 700;
+            text-transform: uppercase;
+            @include fontSize-color(pxToRem(24px),$greenColor);
+        }
+    }
+    form {
+        label {
+            align-items: flex-start;
+            color: $greyColor;
+            display: flex;
+            
+            i {
+                padding-top: pxToRem(6px);
+                margin-left: pxToRem(2px);
+                @include fontSize-color(pxToRem(8px),$color-price);
+            }
+        }
+
+        .form-control {
+            height: pxToRem(45px);
+            outline: none;
+        }
+
+        .btn--back {
+            border : 1px solid $greenColor;
+            @include buttonStyleCartPage($white-color,$greenColor);
+            @include px(pxToRem(40px),pxToRem(40px));
+        }
+
+        .btn--register {
+            @include buttonStyleCartPage($greenColor,$white-color);
+            @include px(pxToRem(40px),pxToRem(40px));
+        }
+    }
+
+    @include mobile {
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+
+            .btn {
+                @include px(pxToRem(20px),pxToRem(20px));
+            }
+
+            .btn--back {
+                margin-right: pxToRem(5px);
+            }
+
+            .btn--register {
+                margin-left: pxToRem(5px);
+            }
+        }
+    }
+}
