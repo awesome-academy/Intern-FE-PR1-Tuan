@@ -1,0 +1,20 @@
+mixin newItem(data)
+    .new-item.mb-5 
+        .new-item__title.mb-3= data.title
+        .new-item__time.mb-3 
+            ul.nav 
+                li.nav-item.mr-3
+                    span.mr-2 
+                        i(class="far fa-calendar-minus")
+                    span= data.date
+                li.nav-item.mr-3
+                    span.mr-2  
+                        i(class="far fa-clock")
+                    span= data.time
+                li.nav-item.mr-3
+                    span.mr-2  
+                        i(class="far fa-comment-dots")
+                    span=  `${data.comment} Bình luận`
+        .new-item__img.mb-4
+            img(src=`${data.src}`, alt="new img" class="img-fluid")
+        .new-item__desc= data.desc
