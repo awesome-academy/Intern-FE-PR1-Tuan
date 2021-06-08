@@ -1,0 +1,61 @@
+.main {
+    .form-login {
+        &__title {
+            font-weight: 700;
+            text-transform: uppercase;
+            @include fontSize-color(pxToRem(24px),$greenColor);
+        }
+
+        form {
+            @include my(2rem,4rem);
+            .form-check {
+                margin-right: pxToRem(100px);
+                margin-bottom: 1.5rem;
+
+                &-label {
+                    color: $sort-text-color;
+                    a {
+                        margin-left: 1rem;
+
+                        i {
+                            text-decoration: underline;
+                            @include fontSize-color(pxToRem(14px),$greyColor);
+                        }
+                    }
+                }
+
+                @include mobile {
+                    margin: 0;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+
+        .desc {
+            color: $greyColor;
+            @include my(pxToRem(15px),pxToRem(40px));
+        }
+
+        .btn {
+            @include px(pxToRem(20px),pxToRem(20px));
+        }
+
+        .btn {
+            a {
+                color: $white-color;
+                text-decoration: none;
+            }
+        }
+
+        .btn--register {
+            @include buttonStyleCartPage($greenColor,$white-color);
+            @include px(pxToRem(40px),pxToRem(40px));
+        }
+    }
+
+    @include mobile {
+        .row {
+            margin-bottom: 4rem;
+        }
+    }
+}
